@@ -1,7 +1,7 @@
 const He = "https://slackr-yby-dfb4c61cb1aa.herokuapp.com/"
 // convert the string to the time
 export const show_time = (time_stamp) => {
-  // Convert the timestamp to a Date object
+  // Convert the timestamp to a Date objectst
   const dateObject = new Date(time_stamp);
   // Extract year, month, day, hours, minutes, and seconds
   const year = dateObject.getFullYear();

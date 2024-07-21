@@ -1,13 +1,10 @@
-import { BACKEND_PORT } from "./config.js";
 // A helper you may want to use when uploading new images to the server.
-import { fileToDataUrl } from "./helpers.js";
 import { callAPIget, callAPIpost_withtoken } from "./API.js";
 import { check_image, get_user_info } from "./profile.js";
 import { get_now_user } from "./API.js";
 import { get_now_channel } from "./API.js";
 import { meet_error } from "./profile.js";
 import { get_members } from "./inchannel.js";
-import { get_members_id } from "./inchannel.js";
 import { refresh_channel_member } from "./inchannel.js";
 // all user registed
 let all_user = [];
