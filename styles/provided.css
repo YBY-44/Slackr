@@ -1,0 +1,487 @@
+
+/* base styles, feel free to edit */
+html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: -apple-system, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+header{
+    display:flex;
+    height: 50px;
+}
+body{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+}
+main{
+    flex:1;
+    max-height: calc(100vh - 90px);
+}
+footer{
+    display:flex;
+    height: 40px;
+}
+div.error-message{
+        justify-content: center;
+        display: flex;
+        position: fixed;
+        font-weight:bold;
+        font-size: 20px;
+        height: 50px;
+        width: 400px;
+        color: #004545;
+        top: 3%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #ffffff;
+        padding: 0px;
+        border-radius: 10px;
+}
+p.error{
+    margin: 10px 0px 0px 0px;
+}
+
+div.received_msg{
+    display: flex;
+    position: fixed;
+    height: 30px;
+    width: 400px;
+    color: #004545;
+    top: 2%;
+    left: 50%;
+    margin: 0px 0px 0px 0px;
+    font-size: 12px;
+    color: black;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    padding: 0px;
+    border-radius: 10px;
+    white-space: nowrap;   
+    overflow: hidden;       
+}
+
+p.top_text{
+    max-width: 300px;
+    padding: 0px;
+    margin: 10px 10px 0px 10px;
+    white-space: nowrap;      
+    overflow: hidden;       
+    text-overflow: ellipsis; 
+}
+
+.close-button {
+  width: 70px;
+  height: 30px;
+  border-radius: 10px;
+  border: 1px #004545 solid;
+  margin: 9px 0px 0px 20px;
+  background-color: white;
+  cursor: pointer;
+}
+.close-button-r {
+    font-size: 12px;
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px #004545 solid;
+    margin: 6px 0px 0px 20px;
+    background-color: white;
+    cursor: pointer;
+  }
+
+.bg{
+    background-color: #00a0a0;
+}
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+/* header */
+div.header{
+    display:none;
+    width:100%;
+    height: 50px;
+    background-color: #00a0a0;
+    border-bottom:2px #007878 solid ;
+}
+
+div.banner-left {
+    background-color: #00a0a0;
+    color:#e5e5e5;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    border-right:1px #007878 solid;
+}
+img.profile{
+    width: 30px;
+    height: 30px;
+    min-width: 30px;
+    min-height: 30px;
+    margin: 5px;
+    cursor:pointer;
+    object-fit: cover;
+}
+img.bright{
+    filter: brightness(0.9);
+}
+img.bright:hover{
+    filter: brightness(1);
+}
+div.colum{
+    color: white;
+    font-weight: bold;
+    margin:0px 5px 5px 5px;
+    flex-direction: column;
+    min-width: 50px;
+    height: 50%;
+    flex: 1;
+    cursor:pointer;
+}
+p.zeropm{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    min-width: 50px;
+    max-width: 200px;
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+p.banner-subtext {
+    font-weight: normal;
+}
+div.banner-right{
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+img.headerbtn {
+    margin-right: 5px;
+    padding-left: 10px;
+    color: white;
+    filter: brightness(0.9);
+    border: 0px;
+}
+img.size_ct{
+    padding-top: 5px;
+    width: 34px;
+    height:37px;
+}
+img.size_if{
+    width: 50px;
+    height:50px;
+}
+img.size_ct:hover,img.size_if:hover,img.mign:hover{
+    filter: brightness(1);
+}
+
+
+
+input.search{
+    width: 100%;
+    height: 40px;
+    margin: 5px;
+    padding-right: 30px;
+    padding-left: 10px;
+    color: white;
+    background-color: #008888;
+    border: 0px;
+}
+div.in_left{
+    flex: 1;
+}
+img.mign{
+    position: absolute;
+    top: 15px;
+    right: 0px;
+    margin-right: 60px;
+    width: 20px;
+    height: 20px;
+    filter: brightness(0.9);
+}
+
+input.search::placeholder{
+    font-style: italic;
+    color: #c3c3c3;
+}
+/* login */
+div.pwd-part{
+    width: 99%;
+}
+label.error{
+    display: none;
+    color: red;
+    font-size: 8px;
+    margin:0px;
+}
+div.banner{
+    height: 150px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+div.login {
+    height:500px;
+}
+div.regist {
+    height:600px;
+}
+div.log_part{
+    display: none;
+    width: 70% !important;
+    flex-direction: column;
+    align-items:center;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
+
+
+p.login,p.regist{
+    width: 100%;
+    text-align: center;
+    font-weight: bold;
+    font-size: 15pt;
+    letter-spacing:0.5pt;
+    margin: 10px 0px 10px 0px;
+    color: #004545;
+}
+
+img.login,img.regist {
+    width: 120px;
+    height: 120px;
+    object-fit: cover; 
+    
+    margin: 10px 0px 0px 0px;
+}
+
+form.login,form.regist{
+    width: 70%;
+    color: rgb(87, 87, 87);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+
+
+label.login,label.regist{
+    font-size: 8pt;
+    margin: 5px 0px 0px 0px;
+}
+
+input.login,input.regist{
+    width: 100%;
+    height: 40px;
+    font-size: 10pt;
+    margin: 5px 0px 5px 0px;
+    padding:0px 0px 0px 10px;
+    border: 1px;
+    border-style:solid;
+    border-color: rgb(188, 188, 188);
+    justify-content: center;
+    color: rgb(68, 68, 68);
+    letter-spacing: 0.5pt;
+}
+
+input.login::placeholder,input.regist::placeholder{
+    color: rgb(176, 176, 176);
+}
+label.remember{
+    width: 100%;
+    margin: 10px 10px 10px 5px;
+}
+button.login, button.regist{
+    font-weight: bold;
+    margin: 10px 50px 0px 0px ;
+    width: 100%;
+    height: 60px;
+    font-size: 11pt;
+    border: 0px;
+    letter-spacing:0.3pt;
+    color: rgb(255, 255, 255);
+    border-radius: 50px; /* 设置圆角半径 */
+}
+button.login:hover, button.regist:hover{
+    background-color: #005b5b;
+}
+button.login:active, button.regist:active{
+    background-color: #003b3b;
+}
+button:disabled {
+    background-color: rgb(189, 189, 189);  
+}
+  
+
+p.login_bottom{
+    font-size: 12px;
+    margin: 20px 0px 0px 0px;
+}
+a.login{
+    color: rgba(75, 0, 0, 0.67);
+}
+a.login:hover{
+    color: rgb(255, 0, 0);
+}
+/* register */
+
+div.regist{
+    display: none;
+    width: 50%;
+    height: 600px;
+    flex-direction: column;
+    align-items:center;
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+}
+form.regist{
+    width: 70%;
+    color: rgb(87, 87, 87);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.password-container {
+    position: relative;
+  }
+
+.password-toggle {
+position: absolute;
+right: 25.5%;
+cursor: pointer;
+}
+.pos0{
+    top: 330px;
+}
+.pos1{
+    top: 400px;
+}
+.pos2{
+    top: 470px;
+}
+
+img.eye{
+    width: 15px;
+    height: 15px;
+}
+
+div.inner{
+    width: 100%;
+    display: flex;
+    flex-direction:row;
+    max-height: 100%;
+}
+div.left_part{
+    display: flex;
+    flex-direction: column;
+    min-width: 150px;
+    width: 30%;
+    max-width: 300px;
+    height: 100%;
+    background-color: #008c8c;
+}
+.left{
+    min-width: 150px;
+    width: 30%;
+    max-width: 300px;
+}
+.right{
+    flex: 1;
+}
+div.right_{
+    display:flex;
+    flex-direction: column;
+    margin: 0px;
+    padding: 0px;
+    flex: 1;
+    /* overflow: hidden; */
+    height: 100%;
+    max-height: 100%;
+    background-color:#ffffff;
+}
+
+div.log{
+    margin-top: 0px;
+}
+button{
+    cursor: pointer;
+}
+
+div.flexdiv{
+    display: flex;
+}
+
+p.nonetxt {
+    font-size: 10px;
+    color: white;
+    width: 100%;
+    text-align: center;
+    background-color:#0aadaf;
+    margin: 0px;
+    padding: 8px 0px 8px 0px;
+}
+
+input:focus{
+    outline: none;
+}
+
+div.last{
+    order:1;
+}
+p.foot_txt{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+div.loader_bg{
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+}
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -20px;
+    margin-left: -20px;
+  }
+
+  p.new_push {
+    position: relative;
+    display: none;
+    font-size: 13px;
+    color: rgb(98, 255, 106);
+    right: 0px;
+    margin:10px 10px 0px 5px;
+    padding: 0px;
+    height: 100%;
+    align-items: center;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+

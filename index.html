@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Slackr</title>
+  <link rel="icon" href="src/img/logo.png" alt="Slackr" type="image/x-icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- You can add your styles and scripts here -->
+  <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/provided.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/public_channel.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/joined_channel.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/creat_channel.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/inchannel.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/edit_profile.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/message.css" />
+  <link rel="stylesheet" type="text/css" media="screen" href="styles/invite.css" />
+  <script type="module" src="src/helpers.js"></script>
+</head>
+
+<body class="bg">
+  <div class="loader_bg">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="margin:auto;background:#fff;display:block;" width="200px" height="200px" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid">
+      <path fill="none" stroke="#00d8ff" stroke-width="8" stroke-dasharray="42.76482137044271 42.76482137044271" d="M24.3 30C11.4 30 5 43.3 5 50s6.4 20 19.3 20c19.3 0 32.1-40 51.4-40 C88.6 30 95 43.3 95 50s-6.4 20-19.3 20C56.4 70 43.6 30 24.3 30z" stroke-linecap="round" style="transform:scale(0.8);transform-origin:50px 50px">
+        <animate attributeName="stroke-dashoffset" repeatCount="indefinite" dur="1s" keyTimes="0;1" values="0;256.58892822265625"></animate>
+      </path>
+    </svg>
+  </div>
+  <div class="outer_big" id="bigimg">
+    <div class="big_img">
+      <img class="left_go" id="goes_left" alt="previous" src="src/img/arrow.png">
+      <div class="center_big_img">
+        <img class="show_img" id="center_now" alt="image">
+        <div class="bottom_txt">
+          <p class="bottom_txt" id="now_index">0</p>
+          <p class="bottom_txt">/</p>
+          <p class="bottom_txt" id="total_index">100</p>
+        </div>
+      </div>
+      <img class="right_go" alt="next" id="goes_right" src="src/img/arrow.png">
+    </div>
+  </div>
+  <div class="bg_black_img" id="bg_img"></div>
+  <header class="banner">
+    <div class="header" id="banner">
+      <div class="left banner-left">
+        <img class="profile bright" src="src/img/proicon.png" id="profile" alt="profile">
+        <div class="colum">
+          <p class="zeropm" id="banner-name"></p>
+          <p class="zeropm banner-subtext" id="banner-email"></p>
+        </div>
+        <img class="profile bright" src="src/img/logout.png" id="logout" alt="logout">
+      </div>
+      <div class="right banner-right">
+        <div class="in_left flexdiv">
+          <input class="search" id='search' placeholder="Search the channel you want!">
+          <img class="mign" src="src/img/search.png" alt="search">
+        </div>
+        <div class="flexdiv">
+          <img class="headerbtn size_ct" src="src/img/ncl.png" alt="new" title="Creat your own channel" id="ct_channel">
+        </div>
+      </div>
+    </div>
+  </header>
+  <main role="main" class="bg">
+   <div class="login bg log log_part" id="login_div">
+      <img class="login" src="src/img/logo_transparent.png" alt="login">
+      <p class="login">SIGN IN</p>
+      <form class="login" >
+        <label class="login">Email</label>
+        <input type="text" class="login" placeholder="Email">
+        <label class="login">Password</label>
+        <div>
+        <input id ="pwd-eye0"type="password" class="login" placeholder="Password" autocomplete="current-password">
+        <img id="eye0" alt="see pwd" src="src/img/eye-closed.png" class="password-toggle pos0 eye">
+        </div>
+        <label class="error">Invalid username or password</label>
+        <label class="remember">
+        <input type="checkbox" name="remember" value="yes" > Remember me</label>
+        <button class="login bg" id="login_botton" type="button">Sign in</button>
+      </form>
+      <p class="login_bottom">Do not have an account? <a class="login" href="#Regist" id="regist_btn">Regist here</a></p>
+   </div>
+   <div class="regist bg log log_part" id="regist_div">
+      <img class="regist" src="src/img/logo_transparent.png" alt="regist">
+      <p class="regist">Welcome to Slackr</p>
+      <form class="regist" >
+        <label class="regist">Email</label>
+        <input type="text" class="regist" placeholder="Email" autocomplete="username">
+        <label class="error">Invalid email</label>
+        
+        <label class="regist">Name (3-16 characters)</label>
+        <input type="text" class="regist" placeholder="Username" autocomplete="new-password">
+        <label class="error">Invalid username</label>
+
+        <label class="regist">Password (6-16 characters)</label>
+        <div>
+          <input id="pwd-eye1" type="password" class="regist password-container" placeholder="Password" autocomplete="new-password">
+          <img id="eye1" src="src/img/eye-closed.png" class="password-toggle pos1 eye" alt="see_pwd">
+          <label class="error">Invalid password</label>
+        </div>
+      
+        <label class="regist">Password Confirmation</label>
+        <div>
+          <input id="pwd-eye2" type="password" class="regist password-container" placeholder="Input Password again" autocomplete="new-password">
+          <img id="eye2" src="src/img/eye-closed.png" class="password-toggle pos2 eye" alt="see_pwd">
+          <label class="error">Two passwords don't match</label>
+        </div>
+
+        <button class="regist bg" id="regist_botton" type="button">Creat now</button>
+      </form>
+      <p class="login_bottom">Already have an account? <a class="login" href="#Login" id="login_btn">login here</a></p>
+   </div>
+   <div id="logged_in" class="inner">
+      <div id="channel" class="left_part">
+        <p class="own_channel">CHANNELS BELOW</p>
+        <div class="channel_type" id="your_head">
+          <h3>Your Channels</h3>
+          <img src="src/img/arrow.png" class="arrow" alt="bar">
+        </div>
+        <div id="yours" class="channelGroup">
+        </div>
+        <div class="channel_type" id="join_head">
+          <h3>Joined Channels</h3>
+          <img src="src/img/arrow.png" class="arrow" alt="bar">
+        </div>
+        <div id="joined" class="channelGroup">
+        </div>
+      </div>
+      <div id="right_part" class="right_">
+        <h1 >Welcome to “SLACKR” ! <br> Let's join some channel.</h1>
+        <div id="channel_container" class="channel_container">
+        </div>
+      </div>
+      <!-- there -->
+      <div id="talk" class="right_" >
+        <div class="per_channel_head">
+          <div class="flexdiv">
+            <img class="details aw" src="src/img/arrow.png" id="back" alt="back">
+            <div>
+              <div class="flexdiv zpd">
+                <input class="cn_nm" id="inchannel_name">
+                <p class="num_per" id="incn_num"> (3)</p>
+              </div>
+              <input class="cn_ds" id="inchannel_dis">
+            </div>
+          </div>
+          <div class="flexdiv">
+            
+            <img class="details" src="src/img/detail.png" id="more" alt="more">
+          </div>
+        </div>
+        <div class="content_right">
+          <div class="flexcol">  
+            <div class="per_channel_body" id="message_container">
+              <div>
+                <p class="buffer" id="buffer">Loading...</p>
+                <div class="edit_part" id="edit_div">
+                  <div class="edit_info_part">
+                    <textarea class="edit_msgbox" id="edit_container"></textarea>
+                    <input class="hidden" type="file" id="edit_msg_img">
+                    <img class='edit_msg_img'id="in_edit_img">
+                  </div>
+                  <div class="button_sets">
+                    <label for="is-image" class="check_label">Image</label>
+                    <input class="edit_check" type="checkbox" id="is-image">
+                    <button class="edit_check" id="cg_msg">ok</button>
+                    <button class="edit_check" id="cl_msg">exit</button>
+                  </div>
+                </div>
+                <div class="otherfro" id="other_profile">
+                  <img class="inner_p" id="other_img">
+                  <div class="pro_right">
+                    <div class="pro_row">
+                      <p class="other_title">Name:</p>
+                      <p class="other_value" id="other_name">YBY</p>
+                    </div>
+                    <div class="pro_row">
+                      <p class="other_title">Email:</p>
+                      <p class="other_value" id="other_email">YBY</p>
+                    </div>
+                    <div class="pro_row">
+                      <p class="other_title">Bio:</p>
+                      <p class="other_bio" id="other_bio">XXXXxxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="pin_container" id="pin_continer">
+              </div>
+            </div>
+            <div class="per_channel_bottom" id="bottom_part">
+              <input type="file" id="msg_new_img" class="hidden">
+              <img class="new_image" src="" id="new_img" alt="add_img">
+              <div class="per_channel_bottom_down">
+                <textarea class="bottom" id="msg_container" rows="1"></textarea>
+                <img src="src/img/sed_msg.png" ale="send" class="sed_img sed_msg_pos" id="sed_msg">
+                <img src="src/img/sed_img.png" alt="add_img" class="sed_img" id="sed_img">
+                <div>
+                  <div class="toggle-container" id="toggle-c">
+                    <div class="toggle-button" id="toggle-b">
+                    </div>
+                  </div>
+                <p class="look_pin">look pin</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right_hidden" id="right_bar">
+            <p class="tit_incn" >Channel name</p>
+            <input class="val_incn" >
+            <p class="tit_incn">Channel describtion</p>
+            <input class="val_incn">
+            <p class="tit_incn">Owner</p>
+            <p class="val_incn">YBY</p>
+            <p class="tit_incn">Private state</p>
+            <p class="val_incn">Private</p>
+            <p class="tit_incn">Created time</p>
+            <p class="val_incn">11 Oct 2023</p>
+            <div class="incn_usr">
+              <p class="tit_incn">All user in this channel:</p>
+              <div class="incn_usr_container" id="incn_usr_cont">
+                <div class="each_usr last" id="pass">
+                  <img src="src/img/add_usr.png" alt="invite" class="each_usr" id="open_invite">
+                  <p class="each_usr">Invite</p>
+                </div>
+              </div>
+            </div>
+            <button class="leave" id="leave">Leave this channel</button>
+          </div>
+        </div>
+      </div>
+      <!-- to there -->
+   </div>
+   <div id="creat_channel" class="overall ncbg">
+    <div class="newcn_head">
+        <p class="newcn_txt">CHANNEL NAME :</p>
+        <input class="new_name ncbg" placeholder="Input Name">
+        <p class="newcn_txt"> CHANNEL DISCRIBTION :</p>
+        <input class="new_dis ncbg" placeholder="Input Discribtion">
+        <div class="inrow">
+          <p class="newcn_txt"> IS PRIVATE</p>
+          <input type="checkbox" class="private">
+        </div>
+    </div>
+    <div class="newcn_mid">
+      <div id="temp_search_part">
+        <input class="search_usr ncbg" placeholder="search user to invite" id="creat_invite">
+        <div class="drop_list" id="temp_search">
+        </div>
+      </div>
+      <div class="usr_container" id="usr_add">
+      </div>
+    </div>
+    <div class="inrow flexright">
+    <button type="button" class="newcn_btn ncbg" id="ct_cn">Creat</button>
+    <button type="button" class="newcn_btn ncbg" id="cl_cn">Cancel</button>
+    </div>
+   </div>
+
+    <div class="edit bg log log_part" id="edit_user">
+      <img class="regist" alt="Slackr" src="src/img/logo_transparent.png">
+      <input type="file" id="icon_upload">
+      <button class="edit_image" id="edit_image">EDIT</button>
+      <form class="regist" >
+        <label class="regist">Email</label>
+        <input type="text" class="regist" placeholder="Email" autocomplete="username">
+        <label class="error">Invalid email</label>
+        <label class="regist">Name (3-16 characters)</label>
+        <input type="text" class="regist" placeholder="Username" autocomplete="new-password">
+        <label class="error">Invalid username</label>
+        <label class="regist">New Password (6-16 characters)</label>
+        <div>
+          <input id="pwd-eye3" type="password" class="regist password-container" placeholder="Password" autocomplete="new-password">
+          <img id="eye3" alt="Slackr" src="src/img/eye-closed.png" class="password-eye eye">
+          <label class="error">Invalid password</label>
+        </div>
+        <label class="regist">Bio</label>
+        <textarea class="bio" autocomplete="username"></textarea>
+        <label class="error">Invalid email</label>
+        <div class = "bottom_button" >
+          <button class="specific_info bg" id="change_botton" type="button">Save</button>
+          <button class="specific_info bg" id="close_botton" type="button">Close</button>
+        </div>
+      </form>
+    </div>
+    <div class="invite_main" id='invite_part'>
+      <div class="invite_head" id="invite_search">
+        <input class="search_invite" placeholder="search user to invite" id="invite_add">
+        <div class="drop_list_in" id="current_search_result">
+        </div>
+      </div>
+      <div class="usr_container_in" id="temp_added">
+      </div>
+      <div class="bottom_button">
+        <button class="invite" id="crf_invite">Invite</button>
+        <button class="invite" id="cel_invite">Close</button>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <p class="foot_txt">z5398507 Boyang Yu &copy; Slackr</p>
+  </footer>
+  <script type="module" src="src/API.js"></script>
+  <script type="module" src="src/main.js"></script>
+  <script type="module" src="src/creat_cn.js"></script>
+  <script type="module" src="src/inchannel.js"></script>
+  <script type="module" src="src/profile.js"></script>
+  <script type="module" src="src/message.js"></script>
+  <script type="module" src="src/invite.js"></script>
+</body>
+</html>

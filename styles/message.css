@@ -1,0 +1,286 @@
+div.messagebox{
+    display: flex;
+    margin: 0px 0px 30px 10px;
+    max-width: 90%;
+    width: 90%;
+}
+
+div.msg_header{
+    display: flex;
+    flex-direction: column;
+    cursor: pointer !important;
+}
+div.msg_header:hover{
+    cursor: pointer;
+}
+
+div.message_body{
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+p.message_owner{
+    margin: 3px 0px 0px 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+p.time_stamp{
+    color: rgb(98, 98, 98);
+    margin: 0px 0px 0px 0px;
+    padding: 0px;
+    font-size: 12px;
+}
+p.message_text{
+    max-width: 100%;
+    background-color: #95ec69;
+    font-size: 15px;
+    word-break: break-all;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2;
+    border: 0px;
+    margin: 0px 10px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    background-color: #95ec69;
+    border-radius: 5px;
+    cursor: pointer;
+}
+img.react {
+    height: 35px;
+    margin-left: 0px; /* 左边距 */
+    bottom: 0; /* 图片底边距为0，即底对齐 */
+}
+img.react:hover {
+    filter: brightness(0);
+}
+div.reactions{
+    display: none;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    transition: opacity 0.3s ;
+}
+div.reaction_area{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    flex-wrap: wrap;
+}
+p.emj{
+    border: 1px solid rgb(101, 101, 101);
+    margin: 3px;
+    padding: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    filter: brightness(1);
+    border-radius: 5px;
+    transition: border 0.3s ;
+}
+div.emj{
+    display: flex;
+    flex-direction: row;
+    border:1px solid rgb(197, 197, 197);
+    border-radius: 5px;
+    margin: 5px 5px 0px 0px;
+}
+p.emj_out{
+    margin: 3px 0px 3px 0px;
+    padding: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+p.r_num{
+    margin: 3px 0px 3px 0px;
+    padding: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: border 0.3s;
+}
+p.emj.hover{
+    filter: brightness(0.8);
+}
+
+img.message_image{
+    margin: 0px;
+    object-fit:cover !important;
+    min-width: 50px;
+    width: 70%;
+    max-width: 200px;
+    border: 1px solid white;
+    cursor: pointer;
+}
+div.message_content{
+    align-items: flex-end;
+    position: relative;
+    display: flex;
+    justify-content: start;
+    max-width: 100%
+}
+img.add_border{
+    border: 1px solid rgb(142, 142, 142);
+}
+
+div.hidden_set{
+    margin: 0px 0px 0px 5px;
+    width:100px;
+    height: 17px;
+    display:none;
+    align-content: flex-start;
+    background-color: rgb(0, 116, 112);
+    border: 1px solid rgb(0, 116, 112);
+    border-left:0px ;
+}
+button.msg_btn{
+    padding: 2px;
+    width: 50px;
+    height: 17px;
+    border: 1px rgb(155, 155, 155);
+    background-color: rgb(255, 255, 255);
+    font-size: 12px;
+    margin: 0px;
+    border-left: 1px solid rgb(0, 116, 112);
+}
+button.msg_btn:hover{
+    background-color: rgb(226, 226, 226);
+
+}
+button.msg_btn:active{
+    background-color: rgb(199, 199, 199);
+}
+
+div.otherfro{
+    z-index: 1;
+    align-items: center;
+    color: rgb(84, 84, 84);
+    position:absolute;
+    padding: 5px 0px 0px 5px;
+    min-width: 270px;
+    width: 30%;
+    display: none;
+    background-color: rgb(255, 255, 255);
+    font-size: 12px;
+    border: 1px solid rgb(184, 184, 184);
+    border-radius: 5px;
+}
+div.pro_right{
+    display: flex;
+    flex-direction: column;
+    flex:1;
+    min-width: 130px;
+    margin: 0px 10px 0px 0px;
+}
+div.pro_row{
+    display: flex;
+    margin: 0px 10px 0px 0px;
+    width: 100%;
+}
+p.other_title{
+    width: 35px;
+    margin: 10px 0px 0px 5px;
+    padding: 0px;
+    font-size: 12px;
+}
+p.other_value{
+    max-width: 100%;
+    min-width: 100px;
+    word-wrap: break-word; 
+    white-space: normal;  
+    margin: 10px 10px 0px 3px;
+    padding: 0px;
+    font-size: 12px;
+}
+p.other_bio{
+    max-width: 100%;
+    min-width:100px;
+    margin: 10px 0px 0px 5px;
+    word-wrap: break-word; 
+    white-space: normal;  
+    font-size: 12px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+img.nocursor {
+    cursor:default !important;
+}
+img.inner_p {
+    margin: 10px;
+    width: 100px;
+    height: 100px;
+    object-fit:cover;
+}
+
+div.edit_part {
+    background-color: rgb(228, 228, 228);
+    position:absolute;
+    z-index: 4;
+    display: none;
+    flex-direction: column;
+    padding-bottom: 5px;
+}
+div.button_sets{
+    display:flex;
+    width: 100%;
+    justify-content:end;
+}
+
+
+textarea.edit_msgbox{
+    display: none;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 2px 5px 0px 5px;
+    flex-direction: column;
+    width: 150px;
+    resize: none;
+    height: 150px;
+    border-radius: 5px;
+    padding-left: 5px;
+    letter-spacing: 1px;
+}
+button.edit_check{
+    padding: 0px;
+    width: 30px;
+    height: 20px;
+    font-size: 12px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: 1px solid black;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+label.check_label{
+    margin: 0px;
+    padding: 0px;
+    margin-top: 4px;
+    font-size: 12px;
+}
+div.edit_info_part{
+    width: 100%;
+    display: flex;
+}
+img.edit_msg_img{
+    object-fit: cover;
+    display: none;
+    align-items: center;
+    width: 150px;
+    height: 150px;
+    margin: 4.5px 9.5px 3px 9px;
+    background-color: rgb(193, 193, 193);
+    cursor: pointer;
+    border-radius: 5px;
+}
+input.hidden{
+    display: none;
+}
+button.confirmdel{
+    font-size: 12px;
+    background-color: rgb(194, 0, 0);
+    color: white;
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    border-radius: 5px;
+    border: 1px solid rgb(190, 0, 0);
+}

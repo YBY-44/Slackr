@@ -1,0 +1,64 @@
+div.edit{
+    height: 540px;
+    display: none;
+    position: absolute;
+    z-index: 9999;
+}
+
+button.specific_info{
+    width: 50px;
+    height: 30px;
+    color: white;
+    border: 0px;
+    border-radius: 10px;
+    margin: 10px;
+    filter: brightness(1);
+}
+
+button.specific_info:hover{
+    filter: brightness(0.9);
+}
+
+button.edit_image{
+    width: 60px;
+    height: 20px;
+    border: 0px;
+    background-color: #00a0a0;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 0px 0px 0px;
+    filter: brightness(1);
+}
+
+button.edit_image:hover{
+    filter: brightness(0.9);
+}
+
+div.bottom_button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+textarea.bio{
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 60px;
+    font-size: 10pt;
+    margin: 5px 0px 5px 0px;
+    padding:0px 0px 0px 5px;
+    border: 1px;
+    resize: none;
+    border-style:solid;
+    border-color: rgb(188, 188, 188);
+    justify-content: center;
+    color: rgb(68, 68, 68);
+    letter-spacing: 0.5pt;
+}
+
+.password-eye {
+    position: absolute;
+    right: 15%;
+    top: 335px;
+    cursor: pointer;
+}
