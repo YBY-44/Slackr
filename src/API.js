@@ -1,4 +1,4 @@
-const He = "https://github.com/YBY-44/Slackr.git/"
+const He = "https://slackr-yby-dfb4c61cb1aa.herokuapp.com/"
 // convert the string to the time
 export const show_time = (time_stamp) => {
   // Convert the timestamp to a Date object
