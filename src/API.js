@@ -1,4 +1,4 @@
-import { BACKEND_PORT } from "./config.js";
+const He = "git remote add origin https://github.com/YBY-44/Slackr.git/"
 // convert the string to the time
 export const show_time = (time_stamp) => {
   // Convert the timestamp to a Date object
@@ -50,7 +50,7 @@ export const change_channel=(new_id)=>{
 // all GET request send by this function
 export const callAPIget = (path,token) => {
     return new Promise((success, error) => {
-      fetch("http://localhost:"+String(BACKEND_PORT)+"/"+String(path), {
+      fetch(He + String(path), {
         method: 'GET',
         headers: {
           "Authorization": String(token)
@@ -81,7 +81,7 @@ export const callAPIget = (path,token) => {
 // all Get message request send by this function
 export const callAPIget_msg = (path,token) => {
   return new Promise((success, error) => {
-    fetch("http://localhost:"+String(BACKEND_PORT)+"/"+String(path), {
+    fetch(He + String(path), {
       method: 'GET',
       headers: {
         "Authorization": String(token)
@@ -111,7 +111,7 @@ export const callAPIget_msg = (path,token) => {
 // all post request send by this question 
   export const callAPIpost = (path, input_data) => {
     return new Promise((success, error) => {
-      fetch("http://localhost:"+String(BACKEND_PORT)+"/" + String(path), {
+      fetch(He + String(path), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(input_data),
@@ -139,7 +139,7 @@ export const callAPIget_msg = (path,token) => {
 // call post request with token send by this function
   export const callAPIpost_withtoken = (path, input_data,token) => {
     return new Promise((success, error) => {
-      fetch("http://localhost:"+String(BACKEND_PORT)+"/" + String(path), {
+      fetch(He + String(path), {
         method: "POST",
         headers: { "Authorization": String(token) ,
                     "Content-Type": "application/json"
@@ -168,7 +168,7 @@ export const callAPIget_msg = (path,token) => {
 //  all put request with token send by this message
 export const callAPIput = (path, input_data,token) => {
   return new Promise((success, error) => {
-    fetch("http://localhost:"+String(BACKEND_PORT)+"/" + String(path), {
+    fetch(He + String(path), {
       method: "PUT",
       headers: { "Authorization": String(token) ,
                   "Content-Type": "application/json"
@@ -201,7 +201,7 @@ export const callAPIput = (path, input_data,token) => {
 // All delete request send by this function
 export const callAPIdelete = (path,token) => {
 return new Promise((success, error) => {
-  fetch("http://localhost:"+String(BACKEND_PORT)+"/"+String(path), {
+  fetch(He + String(path), {
     method: 'DELETE',
     headers: {
       "Authorization": String(token)
