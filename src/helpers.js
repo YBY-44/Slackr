@@ -21,7 +21,6 @@ export function fileToDataUrl(file) {
     if (!valid) {
         error_message("file is not a picture");
         throw Error('provided file is not a png, jpg or jpeg image.');
-       
     }
     
     const reader = new FileReader();
